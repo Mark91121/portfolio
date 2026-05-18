@@ -27,7 +27,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s=localStorage.getItem('theme');if(s==='dark'||s==='light'){document.documentElement.setAttribute('data-theme',s);}else{var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}}catch(e){}})();`,
+            __html: `(function(){try{localStorage.setItem('theme','light');document.documentElement.setAttribute('data-theme','light');}catch(e){}})();`,
           }}
         />
       </head>

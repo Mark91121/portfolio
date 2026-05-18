@@ -20,18 +20,9 @@ export default function ThemeProvider({
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored === "dark" || stored === "light") {
-      setTheme(stored);
-      document.documentElement.setAttribute("data-theme", stored);
-    } else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)",
-      ).matches;
-      const initial: Theme = prefersDark ? "dark" : "light";
-      setTheme(initial);
-      document.documentElement.setAttribute("data-theme", initial);
-    }
+    setTheme("light");
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
   }, []);
 
   const toggle = () => {

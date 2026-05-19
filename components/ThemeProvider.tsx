@@ -20,9 +20,11 @@ export default function ThemeProvider({
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    setTheme("light");
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light");
+    // Read the theme that the inline script already applied to <html>
+    const saved = localStorage.getItem("theme") as Theme | null;
+    const resolved: Theme = saved === "dark" ? "dark" : "light";
+    setTheme(resolved);
+    document.documentElement.setAttribute("data-theme", resolved);
   }, []);
 
   const toggle = () => {

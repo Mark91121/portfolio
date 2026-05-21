@@ -6,7 +6,7 @@ import ChatbotBubble from "@/components/ChatbotBubble";
 import ThemeProvider from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Mark Manalo — Software Engineer",
+  title: "Mark Manalo - Software Engineer",
   description:
     "Portfolio of a software engineer passionate about building beautiful digital experiences.",
   icons: {

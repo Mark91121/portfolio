@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Mark Manalo — Software Engineer",
   description:
     "Portfolio of a software engineer passionate about building beautiful digital experiences.",
+  icons: {
+    icon: "/images/profile.jpg",
+  },
 };
 
 export const viewport: Viewport = {
